@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>US Quick Quote</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img class="logo" src="icon48.png" alt="US Quick Quote" />
+      <div class="brand-text">
+        <div class="brand-title">US Quick Quote</div>
+        <div class="brand-subtitle">Stocks & REITs • NYSE & NASDAQ</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="card card-search">
+      <label class="label" for="ticker">Ticker</label>
+      <div class="row">
+        <input id="ticker" class="input" type="text" inputmode="latin" autocomplete="off" spellcheck="false"
+          placeholder="e.g. AAPL, MSFT, O, PLD" />
+        <button id="btnSearch" class="btn" type="button">Search</button>
+      </div>
+      <div class="hint">
+        Tip: Enter any NYSE or NASDAQ ticker (e.g., AAPL, MSFT, GOOGL, O, PLD).
+      </div>
+    </section>
+
+    <section class="card card-quote">
+      <div class="card-title">Quote</div>
+      <div id="quoteState" class="state">Enter a ticker and click Search.</div>
+
+      <div id="quoteBox" class="quote hidden">
+        <div class="quote-top">
+          <div>
+            <div id="qSymbol" class="q-symbol">—</div>
+            <div id="qName" class="q-name">—</div>
+          </div>
+          <div class="q-pricebox">
+            <div id="qPrice" class="q-price">—</div>
+            <div id="qChange" class="q-change neutral">—</div>
+          </div>
+        </div>
+
+        <div class="quote-grid">
+          <div class="kv"><div class="k">Open</div><div id="qOpen" class="v">—</div></div>
+          <div class="kv"><div class="k">High (D)</div><div id="qHigh" class="v">—</div></div>
+          <div class="kv"><div class="k">Low (D)</div><div id="qLow" class="v">—</div></div>
+          <div class="kv"><div class="k">Volume</div><div id="qVol" class="v">—</div></div>
+        </div>
+
+        <div class="quote-footer">
+          <div id="qTime" class="q-time">—</div>
+          <button id="btnRefresh" class="btn btn-ghost" type="button">Refresh</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card card-tops">
+      <div class="tops-head">
+        <div class="card-title">Top 3 Gainers & Losers</div>
+        <button id="btnLoadTops" class="btn btn-ghost" type="button">Load</button>
+      </div>
+
+      <div id="topsState" class="state">Click "Load" to see Top 3 Stocks and REITs.</div>
+
+      <div id="topsBox" class="tops hidden">
+        <div class="tops-grid">
+          <div class="tops-col">
+            <div class="tops-title">STOCKS • Gainers</div>
+            <div id="stocksGainers" class="list"></div>
+            <div class="tops-title tops-title-spaced">STOCKS • Losers</div>
+            <div id="stocksLosers" class="list"></div>
+          </div>
+
+          <div class="tops-col">
+            <div class="tops-title">REITs • Gainers</div>
+            <div id="fiisGainers" class="list"></div>
+            <div class="tops-title tops-title-spaced">REITs • Losers</div>
+            <div id="fiisLosers" class="list"></div>
+          </div>
+        </div>
+
+        <div class="mini-note">
+          Note: Top 3 is calculated from a list of liquid assets (internal list). Does not represent the entire market.
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <a class="link" href="privacy.html" target="_blank" rel="noreferrer">Privacy</a>
+      <span class="dot">•</span>
+      <a class="link" href="https://stooq.com" target="_blank" rel="noreferrer">Data: Stooq (free)</a>
+    </section>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
